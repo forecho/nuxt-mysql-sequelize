@@ -1,7 +1,7 @@
 'use strict';
 
 import Sequelize, { DataTypes } from 'sequelize';
-import allConfig from '~~/config/config.json';
+import allConfig from '~~/config/config.js';
 
 
 // import all models

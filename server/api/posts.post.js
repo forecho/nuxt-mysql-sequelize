@@ -4,7 +4,7 @@ export default defineEventHandler(async (event) => {
   const form = await readBody(event);
   const { title, content } = extractTitleAndBody(form.content);
 
-  if (form.id && form.id != '') {
+  if (form.id && form.id !== '') {
     return updatePost(form.id, title, content);
   }
   return createPost(title, content);
@@ -29,11 +29,10 @@ function extractTitleAndBody(bodyData) {
  * 
  */
 async function createPost(title, content) {
-  const post = await db.Posts.create({
+  return await db.Posts.create({
     title,
     content,
   });
-  return post;
 }
 
 /**
